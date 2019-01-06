@@ -32,13 +32,22 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
+[difftool "vscode"]
+
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[mergetool "vscode"]
+
+	cmd = code --wait $MERGED
+
 [commit]
 
 
 [diff]
 
 #	tool = p4merge
-	tool = vimdiff
+#	tool = vimdiff
+	tool = vscode
 
 [difftool "p4merge"]
 
@@ -51,7 +60,8 @@
 [merge]
 
 #	tool = p4merge
-	tool = vimdiff
+#	tool = vimdiff
+	tool = vscode
 
 [mergetool "p4merge"]
 
